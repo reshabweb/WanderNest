@@ -1,0 +1,72 @@
+<%- include('../partials/head') %>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+  <%- include('../partials/header') %>
+
+  <main class="flex items-center justify-center min-h-screen px-4">
+    <div class="w-full max-w-lg bg-white rounded-xl shadow-lg p-8">
+      <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">
+        Welcome Back
+      </h1>
+
+      
+      <%- include('../partials/errors') %>
+
+      <form action="/login" method="POST" class="space-y-5">
+        
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+            <i class="fa-solid fa-envelope"></i>
+          </span>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="your@email.com"
+            value="<%= oldInput.email ? oldInput.email : '' %>"
+            class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 transition"
+            required 
+          />
+        </div>
+
+        
+        <div class="relative">
+          <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+            <i class="fa-solid fa-lock"></i>
+          </span>
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Enter your Password"
+            class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 transition"
+            required 
+          />
+        </div>
+
+        
+        <div class="flex items-center justify-between">
+          <label class="flex items-center">
+            <input type="checkbox" name="remember" class="text-red-500 focus:ring-red-500">
+            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+          </label>
+        </div>
+
+        
+        <button type="submit"
+          class="w-full bg-red-500 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 
+                 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition">
+          Sign In
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      
+      <p class="text-center text-sm text-gray-600 mt-6">
+        Don't have an account? 
+        <a href="/signup" class="text-red-500 hover:underline">Sign up</a>
+      </p>
+    </div>
+  </main>
+</body>
+</html>
