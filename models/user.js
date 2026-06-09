@@ -19,7 +19,7 @@ const userSchema = mongoose.Schema({
     type: String,
     enum: ['host', 'guest'],
     default: 'guest'
-  },  
+  },
   favourites: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Home'

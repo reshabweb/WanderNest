@@ -5,7 +5,7 @@ const homeSchema = mongoose.Schema({
   houseName: {
     type: String,
     required: true
-  }, 
+  },
   price: {
     type: Number,
     required: true

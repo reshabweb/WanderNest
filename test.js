@@ -4,8 +4,8 @@ const path = require('path');
 
 const express = require('express');
 const session = require('express-session');
-const MongoDBStore = require('connect-mongodb-session') (session);
-const { default: mongoose} = require('mongoose');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const { default: mongoose } = require('mongoose');
 const multer = require('multer');
 const DB_PATH = "mongodb+srv://root:root@cluster0.gcmhdvl.mongodb.net/airbnb?retryWrites=true&w=majority&appName=Cluster0";
 
@@ -32,7 +32,7 @@ const randomString = (length) => {
   const characters = 'abcdefghijklmnopqrstuvwxyz';
   let result = '';
   const charactersLength = characters.length;
-  for ( let i = 0; i < length; i++ ) {
+  for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
@@ -60,7 +60,7 @@ const multerOptions = {
 };
 
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(multer(multerOptions).single('photo'));
 app.use(express.static(path.join(rootDir, 'public')));
 app.use("/uploads", express.static(path.join(rootDir, 'uploads')));
@@ -76,7 +76,7 @@ app.use(session({
   store: store
 }));
 
-app.use( (req, res, next) => {
+app.use((req, res, next) => {
   req.isLoggedIn = req.session.isLoggedIn;
   next();
 });
@@ -106,9 +106,9 @@ app.use(authRouter);
 app.use(errorController.get404);
 
 
-mongoose.connect(DB_PATH).then( () => {
+mongoose.connect(DB_PATH).then(() => {
   console.log('Connected to MongoDb');
-   app.listen(3001, () => {
+  app.listen(3001, () => {
     console.log('Server running on http://localhost:3001');
   });
 
