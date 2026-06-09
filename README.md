@@ -265,7 +265,7 @@ npm install
 Create a `.env` file in the root directory:
 
 ```env
-PORT=3000
+PORT=3001
 
 MONGO_URI=
 
@@ -380,14 +380,9 @@ Contributions are welcome!
 
 # 👨‍💻 Developer
 
-**Reshab**
+### Reshab
 
-- Designed and developed the complete application
-- Implemented authentication & session management
-- Built property management system
-- Integrated MongoDB and Mongoose
-- Developed Favorites functionality
-- Created Host Dashboard and Property CRUD features
+Full-Stack Developer passionate about building scalable web applications using Node.js, Express.js, MongoDB, and modern web technologies.
 
 ---
 
