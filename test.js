@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const path = require('path');
 
 
@@ -7,7 +7,7 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const { default: mongoose } = require('mongoose');
 const multer = require('multer');
-const DB_PATH = "mongodb+srv://root:root@cluster0.gcmhdvl.mongodb.net/airbnb?retryWrites=true&w=majority&appName=Cluster0";
+const DB_PATH = process.env.MONGODB_URI;
 
 
 const storeRouter = require("./routes/storeRouter")
@@ -70,7 +70,7 @@ app.use("/homes/uploads", express.static(path.join(rootDir, 'uploads')));
 
 
 app.use(session({
-  secret: "Doing with complete coding",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
   store: store
