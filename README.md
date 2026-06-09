@@ -144,43 +144,43 @@ Express Server
 
 ## 🔑 Login Page
 
-![Login Page](screenshots/Login_page.png)
+![Login Page](Screenshots/Login_page.png)
 
 ---
 
 ## 📝 Signup Page
 
-![Signup Page](screenshots/Signup_page.png)
+![Signup Page](Screenshots/Signup_page.png)
 
 ---
 
 ## 🏘️ Property Listing
 
-![Property Listing](screenshots/Property_list.png)
+![Property Listing](Screenshots/Property_list.png)
 
 ---
 
 ## 📄 Property Details
 
-![Property Details](screenshots/Property_details.png)
+![Property Details](Screenshots/Property_details.png)
 
 ---
 
 ## ❤️ Favorites
 
-![Favorites](screenshots/Favourites.png)
+![Favorites](Screenshots/Favourites.png)
 
 ---
 
 ## 👨‍💼 Host Dashboard
 
-![Host Dashboard](screenshots/Host_Dashboard.png)
+![Host Dashboard](Screenshots/Host_Dashboard.png)
 
 ---
 
 ## ➕ Add Property
 
-![Add Property](screenshots/Add_home.png)
+![Add Property](Screenshots/Add_home.png)
 
 ---
 
