@@ -107,32 +107,34 @@ Built using Node.js, Express.js, MongoDB, EJS, and Tailwind CSS, WanderNest demo
 
 ---
 
-# 🏗️ Architecture
+## 🏗️ Architecture
 
 ```text
 Client Browser
       │
       ▼
-Express Server
+Express Server (test.js)
       │
       ├── Routes
       ├── Controllers
-      ├── Middleware
       ├── Session Authentication
-      └── MongoDB Database
+      ├── MongoDB Database
+      ├── Mongoose Models
+      └── EJS Views
 ```
 
-## Request Flow
+### Request Flow
 
 1. User sends request.
 2. Express routes receive request.
-3. Middleware validates session.
+3. Session middleware validates authentication.
 4. Controllers execute business logic.
 5. Mongoose interacts with MongoDB.
 6. EJS renders dynamic views.
-7. Response is returned to the user.
+7. Response is returned to the client.
 
 ---
+
 
 # 📸 Screenshots
 
@@ -184,37 +186,63 @@ Express Server
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
 WanderNest
 │
 ├── controllers/
+│   ├── authController.js
+│   ├── error.js
+│   ├── hostController.js
+│   └── storeController.js
 │
 ├── models/
+│   ├── home.js
+│   └── user.js
 │
 ├── routes/
+│   ├── authRouter.js
+│   ├── hostRouters.js
+│   └── storeRouter.js
 │
-├── middleware/
+├── Utils/
+│   └── pathUtils.js
 │
 ├── public/
-│   ├── css/
 │   ├── images/
-│   └── uploads/
+│   ├── home.css
+│   └── output.css
+│
+├── uploads/
 │
 ├── views/
 │   ├── auth/
 │   ├── host/
 │   ├── store/
-│   └── shared/
+│   ├── partials/
+│   └── 404.ejs
 │
-├── screenshots/
+├── Screenshots/
+│   ├── Home_page.png
+│   ├── Login_page.png
+│   ├── Signup_page.png
+│   ├── Property_list.png
+│   ├── Property_details.png
+│   ├── Favourites.png
+│   ├── Host_Dashboard.png
+│   └── Add_home.png
 │
 ├── .env.example
+├── .gitignore
+├── LICENSE
+├── nodemon.json
 ├── package.json
-└── app.js
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+└── test.js
 ```
-
 ---
 
 # ⚙️ Installation
@@ -257,7 +285,7 @@ npm start
 Server runs on:
 
 ```text
-http://localhost:3000
+http://localhost:3001
 ```
 
 ---
