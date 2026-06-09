@@ -4,7 +4,7 @@
 
 # 🏠 WanderNest
 
-### A full-stack Airbnb-inspired house rental platform that allows users to discover, save, and manage rental properties with role-based access for Guests and Hosts.
+### A full-stack house rental platform that allows users to discover, save, and manage rental properties with role-based access for Guests and Hosts.
 
 [![Stars](https://img.shields.io/github/stars/reshabweb/WanderNest?style=for-the-badge&color=7C3AED)](https://github.com/reshabweb/WanderNest/stargazers)
 [![Forks](https://img.shields.io/github/forks/reshabweb/WanderNest?style=for-the-badge&color=58A6FF)](https://github.com/reshabweb/WanderNest/network/members)
