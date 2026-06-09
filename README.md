@@ -138,7 +138,7 @@ Express Server
 
 ## 🏠 Home Page
 
-![Home Page](screenshots/Home_page.png)
+![Home Page](Screenshots/Home_page.png)
 
 ---
 
