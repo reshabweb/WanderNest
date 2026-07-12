@@ -2,7 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const Home = require('./models/home');
 
-const DB_PATH = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/wandernest';
+const DB_PATH = process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/wandernest';
 
 const seedHouses = [
   {
