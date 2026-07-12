@@ -115,15 +115,15 @@ app.use(authRouter);
 app.use(errorController.get404);
 
 
-mongoose.connect(DB_PATH).then(() => {
-  console.log('Connected to MongoDb');
-  app.listen(3001, () => {
-    console.log('Server running on http://localhost:3001');
-  });
+const PORT = process.env.PORT || 3001;
 
-}).catch(err => {
-  console.log('Error while connecting to MongoDB using mongoose: ', err);
-});
+mongoose.connect(DB_PATH)
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch(err => console.error(err));
 
 
 

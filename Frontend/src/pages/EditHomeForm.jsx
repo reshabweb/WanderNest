@@ -198,7 +198,7 @@ export default function EditHomeForm() {
               {existingPhoto && !photoFile && (
                 <div className="shrink-0 h-20 w-28 rounded-lg overflow-hidden border border-gray-200">
                   <img 
-                    src={existingPhoto.startsWith("http") ? existingPhoto : `http://localhost:3001/${existingPhoto}`} 
+                    src={existingPhoto.startsWith("http") ? existingPhoto : `${import.meta.env.VITE_API_URL}/${existingPhoto}`} 
                     alt="Preview" 
                     className="w-full h-full object-cover"
                   />

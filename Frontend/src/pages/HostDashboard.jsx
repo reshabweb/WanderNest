@@ -79,7 +79,7 @@ export default function HostDashboard() {
               <tbody className="divide-y divide-gray-200 text-sm font-medium text-gray-700">
                 {homes.map((home) => {
                   const imageUrl = home.photo 
-                    ? (home.photo.startsWith("http") ? home.photo : `http://localhost:3001/${home.photo}`)
+                    ? (home.photo.startsWith("http") ? home.photo : `${import.meta.env.VITE_API_URL}/${home.photo}`)
                     : "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80";
 
                   return (
