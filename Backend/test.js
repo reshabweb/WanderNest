@@ -20,12 +20,28 @@ const errorController = require("./controllers/error");
 const app = express();
 const cors = require('cors');
 
-app.use(cors({
-  origin: ['http://localhost:5173',
-    process.env.CLIENT_URL
-  ],
-  credentials: true
-}));
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.CLIENT_URL,
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      console.log("Incoming Origin:", origin);
+      console.log("Allowed Origins:", allowedOrigins);
+
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`Origin ${origin} not allowed by CORS`));
+    },
+    credentials: true,
+  })
+);
 
 app.set('view engine', 'ejs');
 
