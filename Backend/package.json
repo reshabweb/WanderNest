@@ -2,10 +2,11 @@
   "name": "chapter-10---airbnb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "test.js",
   "scripts": {
     "tailwind": "npx tailwindcss -i ./views/input.css -o ./public/output.css --watch",
-    "start": "concurrently \"nodemon test.js\" \"npm run tailwind\""
+    "start": "node test.js",
+    "dev": "nodemon test.js"
   },
   "keywords": [],
   "author": "",

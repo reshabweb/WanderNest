@@ -12,7 +12,7 @@ import Signup from "./pages/Signup";
 
 // Axios defaults for credential sharing (express-session cookie)
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 export const AuthContext = createContext();
 
