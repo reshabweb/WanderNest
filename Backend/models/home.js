@@ -19,7 +19,8 @@ const homeSchema = mongoose.Schema({
     required: true
   },
   photo: String,
-  description: String,
+  photoPublicId: String,
+  description: String
 });
 
 

@@ -1,5 +1,5 @@
 const Home = require("../models/home");
-const fs = require('fs');
+const { cloudinary } = require("../Utils/cloudinary");
 
 exports.getAddHome = (req, res, next) => {
   res.status(200).json({ success: true });
@@ -36,14 +36,13 @@ exports.postAddHome = (req, res, next) => {
     return res.status(400).json({ success: false, error: 'No image uploaded.' });
   }
 
-  const photo = req.file.path.replace(/\\/g, '/');
-
   const home = new Home({
     houseName,
     price: Number(price),
     location,
     rating: Number(rating),
-    photo,
+    photo: req.file.path,
+    photoPublicId: req.file.filename,
     description
   });
 
@@ -71,14 +70,15 @@ exports.postEditHome = (req, res, next) => {
       home.description = description;
 
       if (req.file) {
-        if (home.photo) {
-          fs.unlink(home.photo, (err) => {
+        if (home.photoPublicId) {
+          cloudinary.uploader.destroy(home.photoPublicId, (err) => {
             if (err) {
               console.log("Error while deleting old photo: ", err);
             }
           });
         }
-        home.photo = req.file.path.replace(/\\/g, '/');
+        home.photo = req.file.path;
+        home.photoPublicId = req.file.filename;
       }
 
       home.save()
@@ -101,8 +101,8 @@ exports.postDeleteHome = (req, res, next) => {
       if (!home) {
         return res.status(404).json({ success: false, error: 'Home not found.' });
       }
-      if (home.photo) {
-        fs.unlink(home.photo, (err) => {
+      if (home.photoPublicId) {
+        cloudinary.uploader.destroy(home.photoPublicId, (err) => {
           if (err) {
             console.log("Error while deleting photo on home deletion:", err);
           }
